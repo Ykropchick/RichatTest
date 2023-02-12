@@ -1,0 +1,24 @@
+{% extends 'payment/base.html' %}
+
+{% block title %}
+    Item
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        {% for item in items %}
+            <div class="col">
+                <div class="col">
+                    Название: {{ item.name }}
+                </div>
+                <div class="col">
+                    Цена: {{ item.price }}
+                </div>
+                <div class="col">
+                    <a href="{% url 'item' id=item.pk %}"><button type="button" class="btn btn-info" >Info</button></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
